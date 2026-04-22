@@ -12,15 +12,9 @@ import { WelcomeModal } from "@/components/welcome-modal"
 
 // 🧮 Modules
 import { SmartReconciliation } from "@/components/modules/smart-reconciliation"
-import { PendingReports } from "@/components/modules/pending-reports"
-import { HistoryLogs } from "@/components/modules/history-logs"
 import { SystemSettings } from "@/components/modules/system-settings"
 import { AdminManagement } from "@/components/modules/admin-management"
-import { WeeklyReportsCollation } from "@/components/modules/weekly-reports-collation"
-import { SmartTellerCalculator } from "@/components/modules/smart-teller-calculator"
-import { ConsolidatedProof } from "@/components/modules/consolidated-proof"
-import { TellerProof } from "@/components/modules/teller-proof"
-import { SmartCallOver } from "@/components/modules/smart-call-over" // ✅ New module added
+
 
 export default function DashboardPage() {
   const [activeModule, setActiveModule] = useState("smart-reconciliation")
@@ -75,20 +69,6 @@ export default function DashboardPage() {
     switch (activeModule) {
       case "smart-reconciliation":
         return <SmartReconciliation userId={userId} />
-      case "pending-reports":
-        return <PendingReports userId={userId} />
-      case "history-logs":
-        return <HistoryLogs />
-      case "weekly-reports-collation":
-        return <WeeklyReportsCollation userId={userId} />
-      case "smart-teller-calculator":
-        return <SmartTellerCalculator userId={userId} />
-      case "consolidated-proof":
-        return <ConsolidatedProof userId={userId} />
-      case "teller-proof":
-        return <TellerProof />
-      case "smart-call-over": // ✅ Added here
-        return <SmartCallOver userId={userId} />
       case "system-settings":
         return <SystemSettings />
       case "admin-management":
